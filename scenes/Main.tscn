@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/BallGenerator.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Lottery.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+
+[node name="BallGenerator" type="Node" parent="."]
+script = ExtResource( 1 )
+ball_scene = ExtResource( 3 )
+generation_position = NodePath("Lottery")
+denominators = [ "mimaomao", "chinesebook", "bright_sliver", "weiyueye", "xul4u4tp", "a367560", "siez23", "win50117", "bgtcdsbnhbgyujbdvsli" ]
+
+[node name="Lottery" parent="BallGenerator" instance=ExtResource( 4 )]
+position = Vector2( 2, -103 )
+
+[node name="Timer" type="Timer" parent="BallGenerator"]
+wait_time = 0.3
+autostart = true
+
+[node name="Floor" parent="." instance=ExtResource( 2 )]
+position = Vector2( -308, 223 )
+rotation = -2.87979
+
+[node name="Floor2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -488, -10 )
+rotation = 1.57079
+
+[node name="Floor3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 320, 194 )
+rotation = -0.452129
+
+[node name="Floor4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 492, -75 )
+rotation = 1.57079
+
+[node name="Floor5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16, 299 )
+rotation = 3.14159
+
+[node name="Floor7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 194, -439 )
+
+[node name="Floor6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -198, -439 )
+rotation = 3.14159
+
+[node name="Floor9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 442, -354 )
+rotation = -2.0944
+
+[node name="Floor8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -422, -340 )
+rotation = 2.09439
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
